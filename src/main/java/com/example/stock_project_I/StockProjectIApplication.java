@@ -26,8 +26,8 @@ public class StockProjectIApplication {
 	@Bean
 	public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
 		return args -> {
-			Quote quote = restTemplate.getForObject("https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
-			log.info(quote.toString());
+			Stock stock = restTemplate.getForObject("https://sandbox.iexapis.com/stable/stock/AAPL/quote?token=Tpk_3baa626e1bb640e6967347e8432d531f", Stock.class);
+			log.info(stock.toString());
 		};
 	}
 

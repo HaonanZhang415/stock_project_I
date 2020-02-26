@@ -1,16 +1,16 @@
 <html>
     <body>
-        <form action="#" th:action="@{/}" th:object="${personForm}" method="post">
+        <form action="#" th:action="@{/}" th:object="${stockForm}" method="post">
             <table>
                 <tr>
-                    <td>Name:</td>
-                    <td><input type="text" th:field="*{name}" /></td>
-                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+                    <td>Stock:</td>
+                    <td><input type="text" th:field="*{stock}" /></td>
+                    <td th:if="${#fields.hasErrors('stock')}" th:errors="*{stock}">Stock Error</td>
                 </tr>
                 <tr>
-                    <td>Age:</td>
-                    <td><input type="text" th:field="*{age}" /></td>
-                    <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}">Age Error</td>
+                    <td>Exchange:</td>
+                    <td><input type="text" th:field="*{exchange}" /></td>
+                    <td th:if="${#fields.hasErrors('exchange')}" th:errors="*{exchange}">Exchange Error</td>
                 </tr>
                 <tr>
                     <td><button type="submit">Submit</button></td>

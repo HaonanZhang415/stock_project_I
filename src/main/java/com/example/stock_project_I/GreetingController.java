@@ -18,12 +18,12 @@ public class GreetingController implements WebMvcConfigurer{
 	}
 
 	@GetMapping("/")
-	public String showForm(PersonForm personForm) {
+	public String showForm(StockForm stockForm) {
 		return "form";
 	}
 	
 	@PostMapping("/")
-	public String checkPersonInfo(@Valid PersonForm personForm, BindingResult bindingResult) {
+	public String checkPersonInfo(@Valid StockForm stockForm, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
 			return "form";

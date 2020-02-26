@@ -1,5 +1,13 @@
-<html>
-	<body>
-		Congratulations! You are old enough to sign up for this site.
-	</body>
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Stock Price</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'stock: ' + ${#stockForm.getStock()}" />
+    <p th:text="'exchange: ' + ${#stockForm.getExchange()}" />
+    <a href="/">Submit another stock</a>
+</body>
 </html>
