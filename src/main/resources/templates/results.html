@@ -6,8 +6,8 @@
 </head>
 <body>
 	<h1>Result</h1>
-    <p th:text="'stock: ' + ${#stockForm.getStock()}" />
-    <p th:text="'exchange: ' + ${#stockForm.getExchange()}" />
+    <p th:text="'stock: ' + ${stockForm.stock}" />
+    <p th:text="'exchange: ' + ${stockForm.exchange}" />
     <a href="/">Submit another stock</a>
 </body>
 </html>

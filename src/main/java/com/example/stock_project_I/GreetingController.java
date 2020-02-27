@@ -9,6 +9,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 @Controller
 public class GreetingController implements WebMvcConfigurer{
 
@@ -18,17 +21,18 @@ public class GreetingController implements WebMvcConfigurer{
 	}
 
 	@GetMapping("/")
-	public String showForm(StockForm stockForm) {
+	public String showForm(Model model) {
+		model.addAttribute("stockForm", new StockForm());
 		return "form";
 	}
 	
 	@PostMapping("/")
-	public String checkPersonInfo(@Valid StockForm stockForm, BindingResult bindingResult) {
+	public String checkPersonInfo(@Valid @ModelAttribute StockForm stockForm, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
 
-		return "redirect:/results";
+		return "results";
 	}
 }
