@@ -6,8 +6,8 @@
 </head>
 <body>
 	<h1>Result</h1>
-    <p th:text="'stock: ' + ${stockForm.stock}" />
-    <p th:text="'name: ' + ${stockForm.exchange}" />
+    <p th:text="'stock: ' + ${stock.symbol}" />
+    <p th:text="'name: ' + ${stock.companyName}" />
     <a href="/">Submit another stock</a>
 </body>
 </html>

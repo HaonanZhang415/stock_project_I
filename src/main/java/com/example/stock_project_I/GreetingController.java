@@ -21,22 +21,25 @@ public class GreetingController implements WebMvcConfigurer{
 	}
 
 	@GetMapping("/")
-	public String showForm(Model model) {
-		model.addAttribute("stockForm", new StockForm());
+	public String showForm(StockForm stockForm) {
 		return "form";
+	}
+
+	@ModelAttribute
+	public Stock populateStock() {
+		StockAPICaller stockAPICaller = new StockAPICaller();
+		Stock stock = stockAPICaller.makeAPICall();
+
+		return stock;
 	}
 	
 	@PostMapping("/")
-	public String checkPersonInfo(@Valid @ModelAttribute StockForm stockForm, BindingResult bindingResult) {
+	public String checkPersonInfo(@Valid StockForm stockForm, @ModelAttribute Stock stock, BindingResult bindingResult) {
 
 		if (bindingResult.hasErrors()) {
 			return "form";
 		}
 
-		StockAPICaller stockAPICaller = new StockAPICaller();
-		@ModelAttribute Stock stock;
-		stock = stockAPICaller.makeAPICall();
-		System.out.print("attention:" + stock.getSymbol());
 		return "results";
 	}
 }

@@ -1,6 +1,7 @@
-com/example/stock_project_I/Value.class
-com/example/stock_project_I/StockForm.class
-com/example/stock_project_I/Quote.class
-com/example/stock_project_I/StockProjectIApplication.class
-com/example/stock_project_I/StockAPICaller.class
-com/example/stock_project_I/Stock.class
+com\example\stock_project_I\GreetingController.class
+com\example\stock_project_I\StockForm.class
+com\example\stock_project_I\Value.class
+com\example\stock_project_I\StockAPICaller.class
+com\example\stock_project_I\StockProjectIApplication.class
+com\example\stock_project_I\Quote.class
+com\example\stock_project_I\Stock.class
