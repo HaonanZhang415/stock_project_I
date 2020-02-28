@@ -7,7 +7,9 @@
 <body>
 	<h1>Result</h1>
     <p th:text="'stock: ' + ${stock.symbol}" />
-    <p th:text="'name: ' + ${stock.companyName}" />
+    <p th:text="'security name: ' + ${stock.companyName}" />
+    <p th:text="'exchange: ' + ${stock.primaryExchange}" />
+    <p th:text="'price: ' + ${stock.latestPrice}" />
     <a href="/">Submit another stock</a>
 </body>
 </html>
