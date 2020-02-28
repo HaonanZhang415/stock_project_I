@@ -33,6 +33,10 @@ public class GreetingController implements WebMvcConfigurer{
 			return "form";
 		}
 
+		StockAPICaller stockAPICaller = new StockAPICaller();
+		@ModelAttribute Stock stock;
+		stock = stockAPICaller.makeAPICall();
+		System.out.print("attention:" + stock.getSymbol());
 		return "results";
 	}
 }
